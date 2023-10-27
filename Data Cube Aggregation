@@ -1,0 +1,13 @@
+import pandas as pd
+data = {
+    'Product': ['A', 'A', 'B', 'B', 'A', 'B', 'A', 'B'],
+    'Region': ['North', 'South', 'North', 'South', 'North', 'South', 'North', 'South'],
+    'Sales': [100, 150, 200, 250, 300, 350, 400, 450]
+}
+# Creating a DataFrame
+df = pd.DataFrame(data
+# Performing data cube aggregation
+cube = df.groupby(['Product', 'Region']).agg({'Sales': ['sum', 'mean', 'max', 'min', 'count']})
+# Printing the cube
+print("Data Cube Aggregation:")
+print(cube)
